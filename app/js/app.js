@@ -24,7 +24,7 @@ function showError(fieldId, message) {
 }
 
 /**
- * Shows the file upload progress buffer/overlay.
+ * Shows the file upload progress buffer/overlay
  */
 function showUploadBuffer() {
   const buffer = document.getElementById("upload-buffer");
@@ -174,6 +174,7 @@ async function update_record(event) {
   const taxRegNo = document.getElementById("tax-registration-number")?.value;
   const taxPeriodCt = document.getElementById("tax-period-ct")?.value;
   const ctrFinancialYearEnd = document.getElementById("ctr-financial-year-end-date")?.value;
+  const payGiban = document.getElementById("pay-giban")?.value;
 
   if (!taxRegNo) {
     showError("tax-registration-number", "Tax Registration Number is required.");
@@ -207,6 +208,10 @@ async function update_record(event) {
 
   if (!cachedFile || !cachedBase64) {
     showError("corporate-tax-certificate", "Please upload the Corporate Tax Certificate.");
+    hasError = true;
+  }
+  if (!payGiban) {
+    showError("pay-giban", "Pay (GIBAN) is required.");
     hasError = true;
   }
 
@@ -244,6 +249,7 @@ async function update_record(event) {
         Tax_Registration_Number_TRN: taxRegNo,
         Tax_Period_CT: taxPeriodCt,
         Subform_2: subformData,
+        Pay_GIBAN: payGiban,
         Application_Issuance_Date: dateOfIssue
       }
     });
@@ -255,6 +261,7 @@ async function update_record(event) {
         Effective_Registration_Date_CT: effectiveDate,
         CT_Return_DD: ctrDueDate,
         Tax_Period_CT: taxPeriodCt,
+        CT_Pay_GIBAN: payGiban,
         Corporate_Tax_TRN: taxRegNo,
         CT_Status: "Active"
       }
