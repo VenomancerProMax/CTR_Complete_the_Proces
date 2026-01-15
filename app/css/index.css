@@ -27,7 +27,6 @@ body {
   display: block;
 }
 
-
 .close-button {
   position: absolute;
   top: 10px;
@@ -44,7 +43,6 @@ body {
   color: #000;
 }
 
-/* 🔧 Unified styling for text, select, and date inputs */
 input[type="text"],
 input[type="date"],
 select {
@@ -57,9 +55,13 @@ select {
   background-color: #fff;
 }
 
+select#tax-period-ct {
+  padding: 12px 10px;
+  min-height: 42px;
+}
+
 select:focus,
-input:focus,
-#role-input:focus {
+input:focus {
   outline: none;
 }
 
@@ -74,42 +76,61 @@ input[type="date"] {
   border-radius: 5px;
 }
 
-input[type="file"] {
-  width: 100%;
-  padding: 8px 10px;
+.file-upload-container {
   margin-top: 8px;
-  font-size: 12px;
-  border: 1px solid #ccc;
+  border: 2px dashed #ccc;
   border-radius: 5px;
+  padding: 12px;
+  text-align: center;
   background-color: #fff;
+  transition: all 0.3s ease;
 }
 
+.file-upload-container.dragover {
+  border-color: #4A90E2;
+  background-color: #eff6ff;
+}
 
-  .submit-button {
-    margin-top: 20px;
-    width: 100%;
-    padding: 12px;
-    background-color: #4A90E2;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .submit-button:hover {
-    background-color: #357ABD;
-  }
+.file-upload-label { cursor: pointer; }
 
-  .error-message {
+.upload-icon-small {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.file-upload-container p {
+  font-size: 11px;
+  color: #555;
+}
+
+input[type="file"] { display: none; }
+
+.submit-button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #357ABD;
+}
+
+.error-message {
   color: red;
   font-size: 12px;
   margin-top: 4px;
   display: block;
+  min-height: 12px;
 }
 
-/* UPLOAD BUFFER */
 .upload-overlay {
   position: fixed;
   inset: 0;
@@ -149,14 +170,9 @@ input[type="file"] {
   overflow: hidden;
 }
 
-.progress-bar-fill {
+.progress-bar-fill.animate {
   height: 100%;
   background: linear-gradient(90deg, #3498db, #2980b9);
-  width: 0%;
-  transition: width 0.3s ease-in-out;
-}
-
-.progress-bar-fill.animate {
   animation: fillAnimation 2.5s ease-in-out forwards;
 }
 
@@ -165,8 +181,5 @@ input[type="file"] {
   to { width: 100%; }
 }
 
-.hidden {
-  display: none;
-}
-
-
+.hidden { display: none; }
+#custom-modal.flex { display: flex !important; }
