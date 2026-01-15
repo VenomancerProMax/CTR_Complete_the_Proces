@@ -15,74 +15,63 @@ body {
 
 .form-container {
   background-color: #fff;
-  padding: 24px;
+  padding: 16px 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-  max-width: 400px;
+  max-width: 380px;
   width: 100%;
 }
 
-.form-container label:not(:first-of-type) {
-  margin-top: 16px;
+.form-container label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 2px;
   display: block;
 }
 
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #555;
-}
-
-.close-button:hover {
-  color: #000;
+.form-container label:not(:first-of-type) {
+  margin-top: 10px;
 }
 
 input[type="text"],
 input[type="date"],
 select {
   width: 100%;
-  padding: 10px;
-  margin-top: 8px;
+  padding: 6px 8px;
+  margin-top: 4px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 12px;
+  border-radius: 4px;
+  font-size: 11px;
   background-color: #fff;
 }
 
 select#tax-period-ct {
-  padding: 12px 10px;
-  min-height: 42px;
+  padding: 6px 8px;
+  min-height: 32px;
 }
 
 select:focus,
 input:focus {
   outline: none;
+  border-color: #4A90E2;
 }
 
 input[type="date"] {
   appearance: none;
   -webkit-appearance: none;
-  -moz-appearance: none;
   background-color: #fff;
-  padding: 10px;
-  font-size: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 6px 8px;
+  font-size: 11px;
 }
 
 .file-upload-container {
-  margin-top: 8px;
-  border: 2px dashed #ccc;
-  border-radius: 5px;
-  padding: 12px;
+  margin-top: 6px;
+  border: 1.5px dashed #ccc;
+  border-radius: 4px;
+  padding: 8px;
   text-align: center;
-  background-color: #fff;
+  background-color: #f9fafb;
   transition: all 0.3s ease;
 }
 
@@ -94,27 +83,28 @@ input[type="date"] {
 .file-upload-label { cursor: pointer; }
 
 .upload-icon-small {
-  font-size: 20px;
+  font-size: 16px;
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .file-upload-container p {
-  font-size: 11px;
-  color: #555;
+  font-size: 10px;
+  color: #6b7280;
 }
 
 input[type="file"] { display: none; }
 
 .submit-button {
-  margin-top: 20px;
+  margin-top: 14px;
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   background-color: #4A90E2;
   color: white;
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -124,11 +114,28 @@ input[type="file"] { display: none; }
 }
 
 .error-message {
-  color: red;
-  font-size: 12px;
-  margin-top: 4px;
+  color: #dc2626;
+  font-size: 10px;
+  margin-top: 2px;
   display: block;
-  min-height: 12px;
+  min-height: 10px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .upload-overlay {
@@ -143,30 +150,29 @@ input[type="file"] { display: none; }
 
 .upload-box {
   background: #fff;
-  padding: 30px 40px;
+  padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   text-align: center;
-  width: 300px;
+  width: 240px;
 }
 
 .upload-icon {
-  font-size: 40px;
-  margin-bottom: 15px;
+  font-size: 32px;
+  margin-bottom: 10px;
   color: #3498db;
 }
 
 .upload-title {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .progress-bar-background {
   width: 100%;
-  height: 8px;
+  height: 6px;
   background: #eee;
-  border-radius: 5px;
+  border-radius: 4px;
   overflow: hidden;
 }
 
